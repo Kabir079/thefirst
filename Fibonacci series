@@ -1,0 +1,24 @@
+
+# 1   1   2   3    5    8    13    21
+
+
+fibo_cache={}
+
+
+def fibo(n):
+    #If we have cache the value ,then return it 
+    if n in fibo_cache:
+        return fibo_cache[n]
+    #Compute the Nth term
+    if n==1:
+        value=1
+    elif n==2:
+        value=1
+    elif n>2:
+        value=fibo(n-1)+fibo(n-2)
+
+    #Cache the value and return it 
+    fibo_cache[n]=value
+    return value
+for n in range(1,101):
+    print(n,":",fibo(n))

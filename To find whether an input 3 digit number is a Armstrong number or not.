@@ -1,0 +1,12 @@
+x=int(input("Enter a value of 3 digit number : ")) # Enter a value of 3 digit number 
+m=int(x)
+sum=0
+while(x!=0):
+    n=int(x%10)
+    A=n*n*n
+    sum=sum+A
+    x=int(x/10)
+if(sum==m):
+    print("Yes , the integer number is a armstrong number:",m) #Yes , the integer is a armstrong number :
+else:
+    print("No , the input number is not an armstrong number:",m) #No , the input number is not an armstrong number :

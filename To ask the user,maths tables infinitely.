@@ -1,0 +1,17 @@
+def tab():
+    import random
+    while True: #To make loop go infinitely.
+        for i in range(16): 
+              a=random.randint(0,20)
+              b=random.randint(0,12)
+              print("Now",a,"X",b,"= ?")
+              z=int(input("Enter your answer : "))
+              if (z==a*b):
+                   print("The answer is correct!!")
+              else:
+                  print("The answer is inncorrect,please retype the correct answer.")
+                  c=int(input("Enter the correct answer : "))
+                  if (c==a*b):
+                      print("The answer is correct!!")
+                  else:
+                      print("The answer is wrong , you have failed the exam.")

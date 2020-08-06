@@ -6,7 +6,7 @@ def ask():
             b=random.randint(0,11)
             print("Now",a,"X",b,"= ?")
             z=int(input("Enter your answer : "))
-ask            if (z==a*b):
+            if (z==a*b):
                 print("The answer is correct!!")
             else:
                 print("The answer is inncorrect,please retype the correct answer.")

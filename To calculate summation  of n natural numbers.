@@ -1,0 +1,7 @@
+a=1
+sum=0 #to use sum in loop
+b=int(input("Enter the limit : ")) 
+while(a<=b):
+    sum = sum+a
+    a=a+1
+print("Sum of numbers from 1 to",b,"is:",sum) #Sum of numbers from 1 to 2 is 3(example)

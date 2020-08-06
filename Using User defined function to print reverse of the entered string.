@@ -1,0 +1,9 @@
+def reverse(string):
+    reversed_string = ""
+    for i in string :
+        reversed_string = i+reversed_string 
+
+    print("reversed string is:",reversed_string) #2 cba
+
+string=input("Enter the string : ") #1 abc
+reverse(string) #3 cba

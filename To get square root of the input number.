@@ -1,0 +1,3 @@
+num=float(input("Enter a number : ")) #Enter a number 
+num_squrt=num**0.5 #Calculates the square root
+print("The square root of",num,"is",num_squrt) #The square root of 'input number' is

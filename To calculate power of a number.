@@ -1,0 +1,14 @@
+#Power a to b using recursion
+
+def power(a,b):
+    if b==0:            #Base case
+        return 1
+    else:
+        return (a*power(a,b-1))
+
+# Main
+print("Please enter only the positive number below :-")
+num=int(input("Enter the base number : "))
+p=int(input("Enter the exponent number : "))
+result=power(num,p)
+print(num,"raised to the power of",p,"is",result)

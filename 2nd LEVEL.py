@@ -9,9 +9,9 @@ def ask():
             if (z==a*b):
                 print("The answer is correct!!")
             else:
-                print("The answer is inncorrect,please retype the correct answer.")
+                print("The answer is inncorrect,please retype the correct answer ,but Siri the correct answer is",a*b)
                 c=int(input("Enter the correct answer : "))
                 if (c==a*b):
                     print("The answer is correct!!")
                 else :
-                    print("Sorry , it was a wrong answer !!")
+                    print("Sorry , it was a wrong answer ,but Siri the correct answer is",a*b,"!!")

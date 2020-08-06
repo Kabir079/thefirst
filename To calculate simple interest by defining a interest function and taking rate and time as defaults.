@@ -1,0 +1,8 @@
+def interest():
+    a=float(input("Principal : "))
+    r=2 #Rate
+    print("Rate = ",r)
+    t=6 #Time
+    print("Time = ",t)
+    si=float((a*r*t)/100)
+    print("As Rate and Time are set as default which is 2 and 6 respectively ,so we get Simple interest as : ",si)

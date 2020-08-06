@@ -1,0 +1,11 @@
+def sumofsq(n):
+    if n==1:          #Base case
+        return 1
+    elif n==0:        #Base case
+        return 0
+    else:
+        return (n**2)+(sumofsq(n-1))    #Recursion case
+
+a=int(input("Enter a number"))
+b=sumofsq(a)
+print(b)

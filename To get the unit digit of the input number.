@@ -1,0 +1,11 @@
+def position():
+#User-defined function
+    a=int(input("Enter the number :")) #Enter the number
+    b=a%10
+#Calculates the first digit of the input number
+    print("The first digit of the entered value is : ",b) #The first digit of the entered value is :
+
+
+#Main
+position()
+

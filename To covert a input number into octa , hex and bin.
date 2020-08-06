@@ -1,0 +1,8 @@
+num=int(input("Enter a number : ")) #Enter a number :
+print("Number entered =",num) #Number entered = 
+onum=oct(num) #Converts input number into octal number.
+hnum=hex(num) #Converts input number into hexadecimal number.
+binum=bin(num) #Converts input number into binary number.
+print("Octa convertion is ",onum) #Octa coversion is : 
+print("Hexa convertion is ",hnum) #Hexa conversion is :
+print("Binary convertion is ",binum) #Binary conversion is :

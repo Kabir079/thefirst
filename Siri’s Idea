@@ -1,0 +1,37 @@
+print("Hey!  Hi , Siri.How are you ? ")
+a=input("Reply : ")
+print("I am good .What were you doing ? ")
+b=input("Reply : ")
+print("Oh ,I wanted to know more about u , like what's favourite color ? ")
+print("Reply :-")
+c=str(input())
+if(c==str("Blue") or c==str("blue")):
+    print("That's my fav color too!")
+elif(c=="Black" or c=="black"):
+    print("Nah , it's lame , blue is better.")
+elif(c=="Gray" or c=="gray"):
+    print("Nah , it's lame , blue is better.")
+else:
+    print("Oh , my fav is Blue , which is very different from you.")
+print("What kind of music do you like ?")
+print("Reply :-")
+d=input("")
+if(d=="k-pop" or d=="K-pop" or d=="kpop" or d=="K-Pop" or d=="K-pop" or d=="k-Pop" or d=="English songs" or d=="englishsongs" or d=="English song"):
+    print("Yah! , its cool and fun to listen to.")
+else:
+    print("Oh , I like K-pop very much.")
+print("What band do you listen to?")
+print("Reply :-")
+e=input("")
+if(e=="BTS" or e=="bts" or e=="EXO" or e=="exo" or e=="Superm" or e=="superm" or e=="SHINee" or e=="TXT" or e=="txt" or e=="Twenty one pilots" or e=="AJR."):
+    print("My gosh , our taste our so matching!!")
+else:
+    print("Oh , I like BTS , EXO , Superm , SHINee , TXT ,Twenty-one pilots ,AJR")
+print("Where do you wanna travel to?")
+f=input("")
+print("Reply :-")
+if(f=="Switzerland" or f=="Japan" or f=="japan" or f=="switzerland"):
+    print("Oh, common this is crazy , even i want to go to Switzerland and Japan ")
+else:
+    print("Oh , seems like we are entirely not the same ,haaa.My place would be Nagaland.")
+print("Ok , then Siri , I have to go now , my mom's calling me. B-bye , have a good day.")

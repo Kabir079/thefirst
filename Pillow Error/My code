@@ -1,0 +1,164 @@
+from tkinter import *
+import random
+import sqlite3
+
+
+root = Tk()
+root.title('Flash Cards')
+root.geometry("500x450")
+
+
+
+#Enlarging Window
+can=Canvas(root,height=0, width=100)
+can.grid()
+
+#Defining list
+li = [#Country PM's
+      "Who is India PM ?",
+      "Who is Bangladesh PM",
+
+      #Indian States CM's
+      "Who is UP CM",
+      "Who is Assam CM ?",
+      "Who is Bihar CM ?",
+      "Who is MP CM ?",
+      "Who is Kerala CM?",
+      "Who is Meghalaya CM",
+      "Who is Chattisgarh CM ?",
+      "Who is Orissa CM",
+      "Who is Goa CM ?",
+      "Who is Delhi CM ?",
+      "Who is Punjab CM ?",
+      "Who is Chandigarh CM ?",
+      "Who is Karnataka CM ?",
+      "Who is Tamil Nadu CM ?",
+      "Who is Telagana ?",
+
+      #Capital of Countries
+      "Capital of India ?",
+      "Capital of Bangladesh ?"
+      
+      #Capital of Indian States
+      "Capital of UP ?",
+      "Capital of Assam ?",
+      "Capital of Bihar ?",
+      "Capital of MP ?",
+      "Capital of Kerala ?",
+      "Capital of Meghalaya ?",
+      "Capital of Chattisgarh ?",
+      "Capital of Orissa ?",
+      "Capital of Goa ?",
+      "Capital of Delhi ?",
+      "Capital of Panjab ?",
+      "Capital of Chandigarh ?",
+      "Capital of Karnataka ?",
+      "Capital of Tamil Nadu ?",
+      "Capital of Telagana ?",
+
+      ]
+#Shuffling list
+random.shuffle(li)
+
+
+#
+#
+#
+
+#Running Indicator
+print("""The program is now runing...
+Please type "main.py" to execute the program."""
+      )
+
+def entering_1():
+    label=Label(root, text=li[0],)
+    label.grid(row=2, column=5)
+
+e1=Entry(root)
+e1.grid(row=3, column=5)
+
+
+#Creating quesbox_1
+button_1 = Button(root, text ="This is 1st question BOX", command =entering_1)
+button_1.grid(row=1, column=5)
+
+def entering_2():
+    label=Label(root, text=li[1])
+    label.grid(row=5, column=5)
+
+e2=Entry(root)
+e2.grid(row=6, column=5)
+
+#Creating quesbox_2
+button_2 = Button(root, text ="This is 2nd question BOX", command =entering_2)
+button_2.grid(row=4, column=5)
+
+def entering_3():
+    label=Label(root, text=li[2])
+    label.grid(row=8, column=5)
+
+e3=Entry(root)
+e3.grid(row=9, column=5)
+
+#Creating quesbox_3
+button_3 = Button(root, text ="This is 3rd question BOX", command =entering_3)
+button_3.grid(row=7, column=5)
+
+def entering_4():
+    label=Label(root, text=li[3])
+    label.grid(row=11, column=5)
+
+e4=Entry(root)
+e4.grid(row=12, column=5)
+
+#Creating quesbox_4
+button_4 = Button(root, text ="This is 4th question BOX", command =entering_4)
+button_4.grid(row=10, column=5)
+
+def entering_5():
+    label=Label(root, text=li[4])
+    label.grid(row=14, column=5)
+
+e5=Entry(root)
+e5.grid(row=15, column=5)
+
+#Creating quesbox_5
+button_5 = Button(root, text ="This is 5th question BOX", command =entering_5)
+button_5.grid(row=13, column=5)
+
+#
+#
+#
+
+#Defining "submit button"
+def submit_data():
+    v1 = e1.get()
+    v2 = e2.get()
+    v3 = e3.get()
+    v4 = e4.get()
+    v5 = e5.get()
+    print(li[0],":",v1)
+    print(li[1],":",v2)
+    print(li[2],":",v3)
+    print(li[3],":",v4)
+    print(li[4],":",v5)
+    print("")
+    e1.delete(0 ,END)
+    e2.delete(0, END)
+    e3.delete(0, END)
+    e4.delete(0, END)
+    e5.delete(0, END)
+
+
+
+
+#Creating Button to submit
+button_submit =  Button(root, text="Submit" , command=submit_data)
+button_submit.grid(row=17, column=5)
+#Creating Button to quit
+button_quit = Button(root, text="Exit Program", command=root.quit)
+button_quit.grid(row=18, column=9)
+
+
+#Looping
+root.mainloop()

@@ -1,0 +1,11 @@
+import time
+from playsound import playsound
+from datetime import datetime
+alarmtime = "13:50"
+while True:
+    lcltime = datetime.now().strftime('%H:%M')
+    if lcltime == alarmtime:
+        playsound(r'C:\Users\Lenovo\Desktop\Sound\tune.wav')
+    else:
+        print("Not yet")
+        time.sleep(10)

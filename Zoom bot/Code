@@ -1,0 +1,50 @@
+import subprocess
+import pyautogui
+import time
+import pandas as pd
+from datetime import datetime
+
+def sign_in(meetingid, pswd):
+    subprocess.call(r'C:\Users\Lenovo\AppData\Roaming\Zoom\bin\Zoom')
+
+    time.sleep(5)
+
+    #Clicks the INITIAL-JOIN button
+    join_btn = pyautogui.locateCenterOnScreen(r'C:\Users\Lenovo\Desktop\old\photo1.png')
+    pyautogui.moveTo(join_btn)
+    pyautogui.click()
+
+    # Type the Meeting ID button
+    meeting_id_btn = pyautogui.locateCenterOnScreen(r'C:\Users\Lenovo\Desktop\old\photo2.png')
+    pyautogui.moveTo(meeting_id_btn)
+    pyautogui.write(meetingid)
+
+    # Disabling both the camera and the mic
+    media_btn = pyautogui.locateAllOnScreen(r'C:\Users\Lenovo\Desktop\old\photo3.png')
+    for a in media_btn:
+        pyautogui.moveTo(a)
+        pyautogui.click()
+        time.sleep(2)
+
+    # Clicking the FINAL-JOIN button
+    join_btn = pyautogui.locateCenterOnScreen(r'C:\Users\Lenovo\Desktop\old\photo4.png')
+    pyautogui.moveTo(join_btn)
+    pyautogui.click()
+
+
+# Calling the function
+sign_in('996 7161 8015','bharat')
+
+# Reading the CSV file
+df = pd.read_csv('tables.csv')
+
+while True:
+    now = datetime.now().strftime("%H:%M")
+    if now in str(df['tables']):
+        row = df.loc[df['tables'] == now]
+        m_id = str(row.iloc[0,1])
+        m_pswd = str(row.iloc[0,2])
+
+        sign_in(m_id, m_pswd)
+        time.sleep(40)
+        print('signed in')

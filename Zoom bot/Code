@@ -1,13 +1,14 @@
 import subprocess
 import pyautogui
 import time
+import csv
 import pandas as pd
 from datetime import datetime
 
-def sign_in(meetingid, pswd):
+def sign_in(meetingid):
     subprocess.call(r'C:\Users\Lenovo\AppData\Roaming\Zoom\bin\Zoom')
 
-    time.sleep(5)
+    time.sleep(2)
 
     #Clicks the INITIAL-JOIN button
     join_btn = pyautogui.locateCenterOnScreen(r'C:\Users\Lenovo\Desktop\old\photo1.png')
@@ -32,19 +33,32 @@ def sign_in(meetingid, pswd):
     pyautogui.click()
 
 
-# Calling the function
-sign_in('996 7161 8015','bharat')
+now = datetime.now().strftime("%H:%M")
+
+def extract(addinglist):
+    return [item[0] for item in addinglist]
+def newextract(addinglist):
+    return [item[1] for item in addinglist]
 
 # Reading the CSV file
-df = pd.read_csv('tables.csv')
+with open("timings.csv",newline='') as csvfile:
+    rows = csv.reader(csvfile,delimiter=',')
+    addinglist = []
+    for i in rows:
+        addinglist.append(i)
 
-while True:
-    now = datetime.now().strftime("%H:%M")
-    if now in str(df['tables']):
-        row = df.loc[df['tables'] == now]
-        m_id = str(row.iloc[0,1])
-        m_pswd = str(row.iloc[0,2])
+a = extract(addinglist)
+b = newextract(addinglist)
 
-        sign_in(m_id, m_pswd)
-        time.sleep(40)
-        print('signed in')
+while True :
+    if a[0] == now :
+        sign_in(b[0])
+        print("Signed in = 1st meeting ")
+        break
+    elif a[1] == now :
+        sign_in(b[1])
+        print("Signed in = 2nd meeting ")
+        break
+    else :
+        print("Not now")
+

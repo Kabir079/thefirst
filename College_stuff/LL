@@ -1,0 +1,29 @@
+###
+Question : Program to implement Single Linked List
+
+Answer : Below
+###
+
+
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+
+
+class LinkedList:
+    def __int__(self):
+        self.head = None
+
+
+# driver code
+if __name__ == '__main__':
+    llist = LinkedList()
+
+    llist.head = Node(1)  #Naming nodes
+    second = Node(2)
+    third = Node(3)
+
+    llist.head.next = second  #Linking first node with second
+    second.next = third       #Linking second node with third
+

@@ -4,28 +4,32 @@ Question : Program to implement DLL.
 Answer : Below code 
 ###
 
-class node:
-    def __init__(self, val):
-        self.val = val
+class Node:
+    def __init__(self,data):
+        self.data = data
         self.next = None
         self.prev = None
-
 
 class DLL:
     def _init_(self):
         self.head = None
 
     def disp(self):
-        p = self.head
-        print("Elements are")
-        while p != None:
-            print(p.val)
-            p = p.next
+        if self.head is None:
+            print("Empty DLL")
+        else:
+            temp = self.head
+            while temp:
+                print(temp.data, "--->", end=" ")
+                temp = temp.next
 
-
-l = DLL()
-x = node(10)
-a = node(20)
-l.head = x
-x.next = a
-l.disp()
+L = DLL()
+n1 = Node(10)
+L.head = n1
+n2 = Node(20)
+n1.next = n2
+n2.prev = n1
+n3 = Node(30)
+n2.next = n3
+n3.prev = n2
+L.disp()

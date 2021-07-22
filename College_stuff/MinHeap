@@ -42,21 +42,16 @@ class MinHeap:
         self.storage[index2] = temp
 
     def insert(self,data):
-        global add
-
-        add = []
         if (self.isFull()):
             raise ("The heap is full")
         self.storage[self.size] = data
-        add.append(data)
         self.size += 1
-        self.heapifyUp()
+        self.heapifyUp(self.size-1)
 
 
 
-    def heapifyUp(self):
-        index = self.size - 1
-        while(self.hasParent(index) and self.parent(index)):
+    def heapifyUp(self,index):
+        if(self.hasParent(index) and self.parent(index) > self.storage[index]):
             self.swap(self.getParentIndex(index),index)
             index = self.getParentIndex(index)
 

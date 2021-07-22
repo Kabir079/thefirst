@@ -1,0 +1,89 @@
+# code for MinHeap
+from heapq import heappop, heappush
+
+class MinHeap:
+    def __init__(self,capacity):
+        self.storage = [0] * capacity
+        self.capacity = capacity
+        self.size = 0
+
+    #Now we will be defining some couple of HELPER functions
+    def getParentIndex(self,index):
+        return (index-1)//2
+
+    def getLeftChildindex(self,index):
+        return (2*index + 1)
+
+    def getRightChildIndex(self,index):
+        return (2*index + 2)
+
+    def hasParent(self,index):
+        return self.getParentIndex(index) >= 0
+
+    def hasLeftChild(self,index):
+        return self.getLeftChildindex(index) < self.size
+
+    def parent(self,index):
+        return self.storage[self.getParentIndex(index)]
+
+    def leftChild(self,index):
+        return self.storage[self.getLeftChildindex(index)]
+
+    def rightChild(self,index):
+        return self.storage[self.getRightChildIndex(index)]
+
+    # Now defining 3 main functions (without using Recursion)
+    def isFull(self):
+        return self.size == self.capacity
+
+    def swap(self,index1,index2):
+        temp = self.storage[index1]
+        self.storage[index1] = self.storage[index2]
+        self.storage[index2] = temp
+
+    def insert(self,data):
+        global add
+
+        add = []
+        if (self.isFull()):
+            raise ("The heap is full")
+        self.storage[self.size] = data
+        add.append(data)
+        self.size += 1
+        self.heapifyUp()
+
+
+
+    def heapifyUp(self):
+        index = self.size - 1
+        while(self.hasParent(index) and self.parent(index)):
+            self.swap(self.getParentIndex(index),index)
+            index = self.getParentIndex(index)
+
+    # defining Print()
+    def Print(self):
+        print("Number of nodes present in the Heap : ",self.capacity)
+        print("Binary heap : ",self.heapsort(self.storage))
+
+    def heapsort(self,list1):
+        heap = []
+        for ele in list1:
+            heappush(heap, ele)
+
+        sort = []
+
+        # the elements are lift in the heap
+        while heap:
+            sort.append(heappop(heap))
+
+        return sort
+
+
+#Driver code
+minheap = MinHeap(4)    #Initializing
+minheap.insert(5)       #inserting 1st node
+minheap.insert(20)      #inserting 2nd node
+minheap.insert(10)      #inserting 3rd node
+minheap.insert(8)       #inserting 4th node
+
+minheap.Print()         #printing the Minheap

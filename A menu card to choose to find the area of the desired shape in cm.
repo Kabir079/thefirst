@@ -12,23 +12,23 @@ def circle(r):
     return area
 print("Select the shape from the menu to get its area ")
 print("1.Square")
-print("2,Rectangle")
+print("2.Rectangle")
 print("3.Triangle")
 print("4.Circle")
 choice=int(input("Enter the choice1/2/3/4 : "))
 if choice==1:
     l=int(input("Enter a value for the lenght of the square:"))
-    print("Area of the square is =",square(l),"cm")
+    print("Area of the square is =",square(l),"cm sq")
 elif choice==2:
     l=float(input("Enter a value for the lenght of the rectangle:"))
     b=float(input("Enter a value for the breadth of the rectangle:"))
-    print("Area of the rectangle is =",rectangle(l,b),"cm")
+    print("Area of the rectangle is =",rectangle(l,b),"cm sq")
 elif choice==3:
    b=float(input("Enter a value for the breadth of the triangle : "))
    h=float(input("Enter a value for the height of the triangle : "))
-   print("Area of the traingle is =",triangle(b,h),"cm")
+   print("Area of the traingle is =",triang\le(b,h),"cm sq")
 elif choice==4:
     r=float(input("Enter a value for the radius of the circle : "))
-    print("Area of the circle is =",circle(r),"cm")
+    print("Area of the circle is =",circle(r),"cm sq")
 else:
     print("Invalid Input")
